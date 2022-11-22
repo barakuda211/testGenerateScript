@@ -7,20 +7,23 @@ import codecs
 import  random
 
 def savePas(path, files):
-    with codecs.open(path, 'w',encoding='utf8') as wfd:
+    with codecs.open(path, 'w',encoding='utf-8-sig') as wfd:
         for f in files:
-            with codecs.open(f, 'r',encoding='utf8') as fd:
+            with codecs.open(f, 'r',encoding='utf-8-sig') as fd:
                 for line in fd.readlines():
-                    line_encode = line.encode("ascii", "ignore")
+                    line_encode = line.encode("utf-8", "ignore")
                     line_decode = line_encode.decode()
                     wfd.write(str(line_decode))
+                    #wfd.write(line)
 
 print("Название папки с заданиями: ")
-master_dir = os.curdir+'/'+input()+'/'
+#master_dir = os.curdir+'/'+input()+'/'
+master_dir = os.curdir+'/Контрольная 3/'
 print("Номер работы: ")
-test_num = input()
+test_num = '3'
 print("Кол-во вариантов: ")
-var_num = int(input())
+var_num = 12
+#var_num = int(input())
 
 ttask_start = ''
 ttask_end = ''
