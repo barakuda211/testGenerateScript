@@ -1,5 +1,6 @@
 from docxcompose.composer import Composer
 from docx import Document
+from docx.shared import Inches, Cm
 import shutil
 import os
 from docx.shared import Pt
@@ -80,8 +81,17 @@ for i in range(0,var_num):
 
     doc_filename = var_dir+'Вариант '+str(var)+'.docx'
     master = Document()
+    style = master.styles['Normal']
+    style.font.name = 'Arial'
     run = master.add_paragraph().add_run('Вариант '+str(var))
+    sections = master.sections
+    for section in sections:
+        section.top_margin = Cm(1.5)
+        section.bottom_margin = Cm(1.5)
+        section.left_margin = Cm(1)
+        section.right_margin = Cm(1)
     run.font.size = Pt(24)
+    run.font.name = 'Arial'
     run.bold = True
     composer = Composer(master)
 
