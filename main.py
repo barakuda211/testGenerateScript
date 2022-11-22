@@ -14,7 +14,7 @@ def savePas(path, files):
                     line_encode = line.encode("utf-8", "ignore")
                     line_decode = line_encode.decode()
                     wfd.write(str(line_decode))
-                    #wfd.write(line)
+                wfd.write("\n")
 
 print("Название папки с заданиями: ")
 master_dir = os.curdir+'/'+input()+'/'
