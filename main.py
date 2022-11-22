@@ -17,13 +17,13 @@ def savePas(path, files):
                     #wfd.write(line)
 
 print("Название папки с заданиями: ")
-#master_dir = os.curdir+'/'+input()+'/'
-master_dir = os.curdir+'/Контрольная 3/'
+master_dir = os.curdir+'/'+input()+'/'
+#master_dir = os.curdir+'/Контрольная 3/'
 print("Номер работы: ")
-test_num = '3'
+test_num = input()
 print("Кол-во вариантов: ")
-var_num = 12
-#var_num = int(input())
+#var_num = 12
+var_num = int(input())
 
 ttask_start = ''
 ttask_end = ''
