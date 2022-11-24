@@ -65,7 +65,9 @@ for file in files:
 task_arrays = {}
 for key in tasks_dict.keys():
     value = tasks_dict[key]
-    koef = (var_num // len(value)) + 1
+    koef = (var_num // len(value))
+    if (var_num % len(value) != 0):
+        koef += 1
     task_arrays[key] = value*koef
     random.shuffle(task_arrays[key])
 
